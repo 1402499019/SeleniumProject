@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="SuiteName" verbose="1" >
+    <test name="TestName" time-out = "5000"  group-by-instances = "true">
+        <parameter name="param1" value="value1"></parameter>
+        <parameter name="param2" value="value2"></parameter>
+        <classes>
+            <class name = "com.huawei.test.LoginCase">
+                <methods>
+                    <include name = "loginTest"/>
+                </methods>
+            </class>
+            <class name = "com.huawei.test.TestPageCase">
+                <methods>
+                    <include name = "addBlock"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
