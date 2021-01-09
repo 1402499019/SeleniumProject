@@ -1,5 +1,5 @@
 package com.huawei.test;
 
 public class test04 {
-    int a;
+    int a1;
 }
