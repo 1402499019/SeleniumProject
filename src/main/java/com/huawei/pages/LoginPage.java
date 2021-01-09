@@ -50,5 +50,6 @@ public class LoginPage extends BasePage {
 
     public static void main(String[] args) {
         System.out.println("测试打包");
+        System.out.println("github测试");
     }
 }
