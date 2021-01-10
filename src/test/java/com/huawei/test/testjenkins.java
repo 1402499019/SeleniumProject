@@ -8,6 +8,6 @@ public class testjenkins {
 
     public static void main(String[] args) {
         logger.info("ceshi");
-        logger.info("测试");
+        logger.info("测试1645");
     }
 }
