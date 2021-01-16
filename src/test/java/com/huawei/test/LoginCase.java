@@ -28,8 +28,9 @@ public class LoginCase {
     }
     @Test(dataProvider = "LoginData",priority = 1)
     public static void loginTest(String username,String password){
-        LOGGER.info("-->开始登录<--");
+        LOGGER.info("-->输入网址<--");
         lp.open();
+        LOGGER.info("-->开始登录<--");
         lp.username.sendKeys(username);
         lp.password.sendKeys(password);
         lp.submit.click();
