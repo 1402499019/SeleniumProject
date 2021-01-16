@@ -8,7 +8,7 @@ public class TestPage extends BasePage{
     public TestPage(){
         PageFactory.initElements(getDriver(),this);
     }
-    @FindBy(xpath = "//a[@class = 'active' and text() = '测试']")
+    @FindBy(xpath = "//li[@data-id='testtask']/a[text() = '测试']")
     public WebElement testButton;
 
     @FindBy(xpath = "///a[@data-title = '添加区块']")
