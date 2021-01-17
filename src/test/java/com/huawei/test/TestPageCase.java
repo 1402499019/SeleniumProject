@@ -16,7 +16,7 @@ public class TestPageCase {
     /**
      * 添加区块
      */
-    @Test
+    @Test(enabled = false)
     public void addBlock(){
         tp.testButton.click();
         tp.add_block.click();
