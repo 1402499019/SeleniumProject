@@ -36,7 +36,7 @@ public class LoginCase {
         lp.submit.click();
         lp.waitUtil30S().until(ExpectedConditions.titleContains("我的地盘"));
         Assert.assertTrue(lp.getDriver().getTitle().contains("我的地盘"),"登录失败，请检查账户或密码！");
-        LOGGER.info("-->结束登录1<--");
+        LOGGER.info("-->结束登录112<--");
     }
     @Test
     public void logoutTest(){
