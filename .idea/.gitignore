@@ -1,2 +1,4 @@
 # Default ignored files
 /workspace.xml
+# CodeStream ignored files
+/../../SeleniumProject\.idea/codestream.xml
