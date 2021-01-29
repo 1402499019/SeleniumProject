@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="systemSuite" verbose="1" >
+    <!--多测试套件执行-->
+    <suite-files >
+        <suite-file path="src/main/java/com/huawei/xml/homePage.xml"/>
+    </suite-files>
+    <!--监听器-->
+    <listeners>
+        <listener class-name="com.huawei.utils.ScreenshotListener"/>
+        <listener class-name="org.uncommons.reportng.HTMLReporter" />
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+    </listeners>
+</suite>

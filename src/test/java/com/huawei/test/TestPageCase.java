@@ -10,7 +10,7 @@ public class TestPageCase {
     @BeforeClass
     public void BeforeClass(){
         tp = new TestPage();
-        tp.implicitilyWait30Second();
+        tp.implicitilyWait10Second();
 
     }
     /**

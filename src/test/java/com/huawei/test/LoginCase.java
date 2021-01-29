@@ -2,41 +2,34 @@ package com.huawei.test;
 
 import com.huawei.pages.BasePage;
 import com.huawei.pages.LoginPage;
-import org.openqa.selenium.WebDriver;
+import com.huawei.utils.ScreenshotListener;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
+@Listeners({ScreenshotListener.class})
 public class LoginCase {
-    static LoginPage lp;
-    private static final Logger LOGGER = LoggerFactory.getLogger(LoginCase.class);
-    @BeforeClass
-    public void BeforeClass(){
-        lp  = new LoginPage();
-        //隐式等待:一直找这个元素，直到找打或超时为止，全局
-        lp.implicitilyWait30Second();
-    }
 
-    @AfterClass
-    public void AfterClass(){
-        //lp.quit();
-    }
+    private static LoginPage lp;
+    private static final Logger LOGGER = LoggerFactory.getLogger(LoginCase.class);
+
     @Test(dataProvider = "LoginData",priority = 1)
     public static void loginTest(String username,String password){
-        LOGGER.info("-->输入网址<--");
-        lp.open();
-        LOGGER.info("-->开始登录<--");
+        lp  = new LoginPage();
+        //隐式等待:一直找这个元素，直到找打或超时为止，全局
+        lp.implicitilyWait10Second();
+        LOGGER.info("输入网址");
+        //get方法会默认调用页面对象的load方法
+        lp.get();
+        LOGGER.info("开始登录");
         lp.username.sendKeys(username);
         lp.password.sendKeys(password);
         lp.submit.click();
         lp.waitUtil30S().until(ExpectedConditions.titleContains("我的地盘"));
-        Assert.assertTrue(lp.getDriver().getTitle().contains("我的地盘"),"登录失败，请检查账户或密码！");
-        LOGGER.info("-->结束登录112<--");
+        Assert.assertTrue(BasePage.getDriver().getTitle().contains("我的地盘"),"登录失败，请检查账户或密码！");
+        LOGGER.info("结束登录112");
     }
     @Test
     public void logoutTest(){

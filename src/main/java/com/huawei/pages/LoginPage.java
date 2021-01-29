@@ -1,12 +1,8 @@
 package com.huawei.pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 
@@ -45,11 +41,7 @@ public class LoginPage extends BasePage {
     public WebElement logout;
     //使用findBy时，需要对页面进行初始化，如果不初始化，会空指针异常
     public LoginPage(){
-     PageFactory.initElements(getDriver(),this);
+      PageFactory.initElements(BasePage.getDriver(),this);
     }
 
-    public static void main(String[] args) {
-        System.out.println("测试打包");
-        System.out.println("github测试");
-    }
 }
