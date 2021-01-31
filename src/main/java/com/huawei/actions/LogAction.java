@@ -2,13 +2,11 @@ package com.huawei.actions;
 
 import com.huawei.pages.LoginPage;
 import com.huawei.utils.ScreenshotListener;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.testng.Assert;
 import org.testng.annotations.*;
 
-@Listeners({ScreenshotListener.class})
+//@Listeners({ScreenshotListener.class})
 public class LogAction extends BaseAction{
 
     private static LoginPage lp;

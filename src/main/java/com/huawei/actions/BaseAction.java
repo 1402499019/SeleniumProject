@@ -22,7 +22,7 @@ import java.util.concurrent.TimeUnit;
  *继承LoadableComponent类，测试程序可以判断浏览器是否加载了正确的页面
  */
 @Listeners({ScreenshotListener.class})
-public class BaseAction extends LoadableComponent{
+public class BaseAction {
    private static WebDriver driver;
    private static ResourceBundle bundle = ResourceBundle.getBundle("config");
    private static String title = "禅道";
@@ -42,14 +42,14 @@ public class BaseAction extends LoadableComponent{
     /**
      *重写load,打开浏览器
      */
-    @Override
-    protected  void load() {
+
+    public static void load() {
         driver.get(bundle.getString("url"));
         driver.manage().window().maximize();
     }
 
-    @Override
-    protected  void isLoaded() throws Error {
+
+    public static  void isLoaded() throws Error {
         //断言访问后的页面是否包含关键字
         Assert.assertTrue(driver.getTitle().contains(title));
     }
@@ -57,8 +57,6 @@ public class BaseAction extends LoadableComponent{
     public static WebDriver getDriver() {
         return driver;
     }
-
-
 
     /**
      * 警告框
@@ -91,7 +89,7 @@ public class BaseAction extends LoadableComponent{
     /**
      * 关闭浏览器
      */
-    public void quit(){
+    public static void quit(){
         driver.quit();
     }
 }

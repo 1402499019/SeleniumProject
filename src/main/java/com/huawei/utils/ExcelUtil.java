@@ -127,7 +127,6 @@ public class ExcelUtil {
     public static Object[][] getTestData(){
 
         int rowCount = sheet.getLastRowNum() - sheet.getFirstRowNum();
-        System.out.println(rowCount);
         int nameColumn = ExcelUtil.getColumnByHeaderValue("账户");
         int passwdColumn = ExcelUtil.getColumnByHeaderValue("密码");
    //     System.out.println(nameColumn + " = " + passwdColumn);

@@ -18,27 +18,29 @@ public class LoginTest {
     public void setUp(){
         LOGGER.info("输入网址");
         //加载页面
-        la.get();
+        BaseAction.load();
     }
     @AfterClass
     public void tearDown(){
-        BaseAction.getDriver().quit();
+        BaseAction.quit();
     }
-    @Test(dataProvider = "testData")
+    @Test(dataProvider = "data")
     public void login(String name,String passwd){
-
         LOGGER.info("登录：账户名{},\t密码{}",name,passwd);
         try{
             LogAction.login(name,passwd);
-           // Assert.assertTrue(BaseAction.getDriver().getTitle().contains("我的地盘"));
+            Thread.sleep(1000);
+            Assert.assertTrue(BaseAction.getDriver().getTitle().contains("我的地盘"));
         }catch (AssertionError a){
             LOGGER.error("登录失败！");
             Assert.fail("登录失败！");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
         LOGGER.info("退出登录");
         LogAction.logout();
     }
-    @DataProvider(name = "testData")
+    @DataProvider(name = "data")
     public Object[][] testData(){
         ExcelUtil.getSheet(Contant.TEST_EXCEL_FILE_PATH,"测试数据");
         return ExcelUtil.getTestData();
