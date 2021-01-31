@@ -8,6 +8,6 @@
   <properties />
   
   
-            <testcase name="loginTest" time="9.480" classname="com.huawei.test.LoginCase" />
+            <testcase name="loginTest" time="9.480" classname="com.huawei.actions.LogAction" />
       
 </testsuite>

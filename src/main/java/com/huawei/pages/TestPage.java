@@ -1,10 +1,11 @@
 package com.huawei.pages;
 
+import com.huawei.actions.BaseAction;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class TestPage extends BasePage{
+public class TestPage extends BaseAction {
     public TestPage(){
         PageFactory.initElements(getDriver(),this);
     }

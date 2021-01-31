@@ -1,16 +1,16 @@
 package com.huawei.pages;
 
+import com.huawei.actions.BaseAction;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.Test;
 
 
 /**
  * 用来封装页面元素
  *
  */
-public class LoginPage extends BasePage {
+public class LoginPage{
 
     @FindBy(xpath = "//input[@name='account']")
     public  WebElement username;
@@ -41,7 +41,7 @@ public class LoginPage extends BasePage {
     public WebElement logout;
     //使用findBy时，需要对页面进行初始化，如果不初始化，会空指针异常
     public LoginPage(){
-      PageFactory.initElements(BasePage.getDriver(),this);
+      PageFactory.initElements(BaseAction.getDriver(),this);
     }
 
 }

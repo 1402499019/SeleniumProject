@@ -1,5 +1,6 @@
-package com.huawei.pages;
+package com.huawei.actions;
 
+import com.huawei.utils.ScreenshotListener;
 import org.openqa.selenium.Alert;
 
 import org.openqa.selenium.WebDriver;
@@ -10,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.LoadableComponent;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
@@ -19,10 +21,11 @@ import java.util.concurrent.TimeUnit;
  * 用于封装：打开url、查找元素、关闭浏览器
  *继承LoadableComponent类，测试程序可以判断浏览器是否加载了正确的页面
  */
-public class BasePage extends LoadableComponent {
+@Listeners({ScreenshotListener.class})
+public class BaseAction extends LoadableComponent{
    private static WebDriver driver;
    private static ResourceBundle bundle = ResourceBundle.getBundle("config");
-   private String title = "禅道";
+   private static String title = "禅道";
 
     /**
      * 构造代码块，执行顺序：静态代码块，main（），构造代码块，构造方法
@@ -31,7 +34,7 @@ public class BasePage extends LoadableComponent {
      *
      * 初始化配置文件
      */
-    public  BasePage() {
+    public BaseAction() {
         PageFactory.initElements(driver,this);
         System.setProperty("webdriver.chrome.driver","E:\\Tools\\Driver\\chromedriver.exe");
         driver = new ChromeDriver();
@@ -40,13 +43,13 @@ public class BasePage extends LoadableComponent {
      *重写load,打开浏览器
      */
     @Override
-    protected void load() {
+    protected  void load() {
         driver.get(bundle.getString("url"));
         driver.manage().window().maximize();
     }
 
     @Override
-    protected void isLoaded() throws Error {
+    protected  void isLoaded() throws Error {
         //断言访问后的页面是否包含关键字
         Assert.assertTrue(driver.getTitle().contains(title));
     }
