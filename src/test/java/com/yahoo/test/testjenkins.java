@@ -1,4 +1,4 @@
-package com.huawei.test;
+package com.yahoo.test;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

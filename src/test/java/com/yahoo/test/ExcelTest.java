@@ -1,7 +1,7 @@
-package com.huawei.test;
+package com.yahoo.test;
 
-import com.huawei.utils.Contant;
-import com.huawei.utils.ExcelUtil;
+import com.yahoo.utils.Contant;
+import com.yahoo.utils.ExcelUtil;
 import org.testng.annotations.Test;
 import java.io.IOException;
 

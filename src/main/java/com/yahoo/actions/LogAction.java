@@ -1,10 +1,8 @@
-package com.huawei.actions;
+package com.yahoo.actions;
 
-import com.huawei.pages.LoginPage;
-import com.huawei.utils.ScreenshotListener;
+import com.yahoo.pages.LoginPage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.testng.annotations.*;
 
 //@Listeners({ScreenshotListener.class})
 public class LogAction extends BaseAction{

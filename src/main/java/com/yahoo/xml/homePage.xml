@@ -5,9 +5,9 @@
         <!--        <parameter name="param1" value="value1"></parameter>-->
         <!--        <parameter name="param2" value="value2"></parameter>-->
         <classes>
-            <class name = "com.huawei.test.LoginTest">
+            <class name = "com.yahoo.test.LoginTest">
             </class>
-            <class name = "com.huawei.test.TestPageCase">
+            <class name = "com.yahoo.test.TestPageCase">
                 <methods>
                     <include name = "addBlock"/>
                 </methods>

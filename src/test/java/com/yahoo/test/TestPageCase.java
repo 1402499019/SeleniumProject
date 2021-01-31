@@ -1,6 +1,6 @@
-package com.huawei.test;
+package com.yahoo.test;
 
-import com.huawei.pages.TestPage;
+import com.yahoo.pages.TestPage;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;

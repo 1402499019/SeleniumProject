@@ -1,10 +1,10 @@
-package com.huawei.test;
+package com.yahoo.test;
 
-import com.huawei.actions.BaseAction;
-import com.huawei.actions.LogAction;
-import com.huawei.utils.Contant;
-import com.huawei.utils.ExcelUtil;
-import com.huawei.utils.ScreenshotListener;
+import com.yahoo.actions.BaseAction;
+import com.yahoo.actions.LogAction;
+import com.yahoo.utils.Contant;
+import com.yahoo.utils.ExcelUtil;
+import com.yahoo.utils.ScreenshotListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;

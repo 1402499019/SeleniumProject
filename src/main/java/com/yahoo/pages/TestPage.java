@@ -1,6 +1,6 @@
-package com.huawei.pages;
+package com.yahoo.pages;
 
-import com.huawei.actions.BaseAction;
+import com.yahoo.actions.BaseAction;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;

@@ -3,11 +3,11 @@
 <suite name="systemSuite" verbose="1" >
     <!--多测试套件执行-->
     <suite-files >
-        <suite-file path="src/main/java/com/huawei/xml/homePage.xml"/>
+        <suite-file path="src/main/java/com/yahoo/xml/homePage.xml"/>
     </suite-files>
     <!--监听器-->
     <listeners>
-        <listener class-name="com.huawei.utils.ScreenshotListener"/>
+        <listener class-name="com.yahoo.utils.ScreenshotListener"/>
         <listener class-name="org.uncommons.reportng.HTMLReporter" />
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
     </listeners>
